@@ -1,0 +1,3 @@
+keziworks.com, www.keziworks.com {
+	reverse_proxy keziworks-app:3000
+}

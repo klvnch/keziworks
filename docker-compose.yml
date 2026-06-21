@@ -1,11 +1,29 @@
 services:
-  app:
+  keziworks-app:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: keziworks
+    container_name: keziworks-app
     env_file:
       - .env
-    ports:
-      - "80:3000"
+    expose:
+      - "3000"
     restart: unless-stopped
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: keziworks-caddy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - keziworks-app
+    restart: unless-stopped
+
+volumes:
+  caddy_data:
+  caddy_config:
