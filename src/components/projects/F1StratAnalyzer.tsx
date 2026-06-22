@@ -12,6 +12,7 @@ import {
   Wind,
 } from "lucide-react";
 import { F1PanelAtmosphere } from "@/components/ui/F1PanelAtmosphere";
+import { ProjectActionButton } from "@/components/ui/ProjectActionButton";
 import { ProjectTracker } from "@/components/ui/ProjectTracker";
 import type { Project } from "@/data/projectsData";
 import type { F1MockData } from "@/data/projectsData";
@@ -169,6 +170,11 @@ export function F1StratAnalyzer({
               </span>
             ))}
           </div>
+          <ProjectActionButton
+            label="Launch Dashboard"
+            href="https://f1-26-analyzer.keziworks.com"
+            accent="cyan"
+          />
         </header>
 
         <div className="flex min-h-0 items-center justify-center">

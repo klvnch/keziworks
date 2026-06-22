@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { CreditCard, Home, Menu, Plus } from "lucide-react";
 import { ALOSplitPanelAtmosphere } from "@/components/ui/ALOSplitPanelAtmosphere";
 import { PhoneFrame } from "@/components/ui/PhoneFrame";
+import { ProjectActionButton } from "@/components/ui/ProjectActionButton";
 import { ProjectTracker } from "@/components/ui/ProjectTracker";
 import type { ALOSplitMockData, Project } from "@/data/projectsData";
 import { formatRupiah } from "@/data/projectsData";
@@ -224,6 +225,11 @@ export function ALOSplit({
               </span>
             ))}
           </div>
+          <ProjectActionButton
+            label="Selective Access"
+            disabled
+            accent="mint"
+          />
         </div>
 
         <div

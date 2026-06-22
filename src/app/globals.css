@@ -253,6 +253,19 @@ body > * {
   animation: tech-marquee-scroll 90s linear infinite;
 }
 
+@keyframes bio-card-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.bio-card-shimmer-track {
+  animation: bio-card-shimmer 3.5s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html.lenis.lenis-smooth {
     scroll-behavior: auto !important;
@@ -263,6 +276,10 @@ body > * {
   }
 
   .tech-marquee-track {
+    animation: none;
+  }
+
+  .bio-card-shimmer-track {
     animation: none;
   }
 }
